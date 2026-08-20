@@ -7,7 +7,7 @@ export type SaveState = {
   fed: number; // 0..100 satiety
   lastFed: number; // timestamp
   owned: string[];
-  equipped: Partial<Record<Slot, string>>;
+  equipped: Partial<Record<Slot, string | undefined>>;
   games: number;
   wins: number;
   bestAccuracy: number;

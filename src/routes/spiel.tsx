@@ -28,7 +28,7 @@ export const Route = createFileRoute("/spiel")({
   component: GamePage,
 });
 
-type Msg = { id: number; text: string; quality?: MoveQuality };
+type Msg = { id: number; text: string; quality?: MoveQuality | undefined };
 
 function GamePage() {
   const { state, update, ready } = useSave();

@@ -5,7 +5,7 @@ export type Mood = "idle" | "happy" | "think" | "sad" | "hungry";
 
 type Props = {
   mood?: Mood;
-  equipped?: Partial<Record<Slot, string>>;
+  equipped?: Partial<Record<Slot, string | undefined>>;
   className?: string;
 };
 
@@ -17,7 +17,7 @@ const MOOD_CLASS: Record<Mood, string> = {
   hungry: "animate-bob",
 };
 
-function itemEmoji(equipped: Partial<Record<Slot, string>>, slot: Slot) {
+function itemEmoji(equipped: Partial<Record<Slot, string | undefined>>, slot: Slot) {
   const id = equipped[slot];
   if (!id) return null;
   return ITEMS.find((i) => i.id === id)?.emoji ?? null;
